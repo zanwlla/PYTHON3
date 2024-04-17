@@ -3,22 +3,33 @@ import os
 restaurantes=['Bife Sujo', 'Saco de Feijão'] 
 
 def finalizar_app():
+    # os.system('cls')
+    # print ('Finalizando app\n')
+    mostrar_subtitulo('Finalizando o app')
+
+def mostrar_subtitulo():
     os.system('cls')
-    print ('Finalizando app\n')
+    print ('texto')
+    print()
 
 def chamar_name_do_app():
      print ('Restaurante Expresso\n') 
 
 def opcao_invalida():
     print('Opção invalida\n')
-    input('Digite uma tecla para voltar ao menu principal: ')
-    main() 
+    # input('Digite uma tecla para voltar ao menu principal: ')
+    # main() 
+    voltar_ao_menu_principal()
 
 def exibir_opcoes():
     print('1-Cadastrar um restaurante')
     print('2-Listar restaurantes')
     print('3-Ativar um restaurante')
-    print('4-Sair do programa') 
+    print('4-Sair do programa')
+
+def voltar_ao_menu_principal():
+     input("\n Digite uma tecla para voltar ao menu principal: \n")
+     main() 
 
 
 def cadastrar_novo_restaurante():
@@ -26,8 +37,8 @@ def cadastrar_novo_restaurante():
      nome_do_restaurante=input('Digite o nome do novo restaurante: \n')
      restaurantes.append(nome_do_restaurante)
      print(f'O restaurante {nome_do_restaurante}, foi cadastrado com sucesso\n')
-     input("Digite uma tecla para voltar ao menu principal: \n")
-     main()
+     voltar_ao_menu_principal()
+
 def listar_restaurantes():
     os. system('cls')
     print('Listando os restaurantes \n')
@@ -35,8 +46,11 @@ def listar_restaurantes():
     for restaurante in restaurantes:
         print(f'-{restaurante}')
     #chamar duas funções de saída
-    input("\n Digite uma tecla para voltar ao menu principal: \n")
-    main()
+    # input("\n Digite uma tecla para voltar ao menu principal: \n")
+    # main()
+    voltar_ao_menu_principal()
+
+
 
 def escolher_opcoes(): 
     try:
