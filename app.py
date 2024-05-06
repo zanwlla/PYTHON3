@@ -8,7 +8,10 @@ restaurantes=[{'nome':'Bife Sujo','categoria':'prato-feito','ativo':True},
 
 def mostrar_subtitulo(texto):
     os.system('cls')
+    linha='*'*(len(texto))
+    print(linha)
     print (texto)
+    print(linha)
     print()
     
 def finalizar_app():
@@ -49,6 +52,7 @@ def cadastrar_novo_restaurante():
 def listar_restaurantes():
     os. system('cls')
     mostrar_subtitulo('Listando os restaurantes \n')
+    print(f'Nome do Restaurante'.ljust(24), 'Categoria'.ljust(23),'Ativo')
     #em português
     for restaurante in restaurantes:
         # print(f'-{restaurante}')
@@ -56,8 +60,8 @@ def listar_restaurantes():
     #para manipular o dicionário
         nome_restaurante=restaurante['nome']
         categoria=restaurante['categoria']
-        ativo=restaurante ['ativo']
-        print(f'-{nome_restaurante} |- {categoria} |-{ativo}')
+        ativo= 'Ativado' if restaurante ['ativo'] else 'Desativado'
+        print(f'-{nome_restaurante.ljust(20)} |- {categoria.ljust(20)} |-{ativo}')
     voltar_ao_menu_principal()
 
 def alterar_estado_restaurante():
@@ -76,7 +80,7 @@ def alterar_estado_restaurante():
              print('O restaurante não foi encontrado')
     voltar_ao_menu_principal()
 
-def escolher_opcoes(): 
+def escolher_opcoes():
     try:
         opcao_digitada=(int(input('Escolha uma opção: ')))
         print('Você selecionou a opção: ',opcao_digitada,'\n')
